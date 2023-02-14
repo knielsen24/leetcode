@@ -7,36 +7,22 @@
         create length and through each iteration increase the length of each array
 */
 
-// var generate = function (numRows) {
-//     let mainArr = [];
+var generate = function (numRows) {
+    let mainArr = [];
 
-//     let i = 0;
-//     let j = 0;
-
-//     while(i < numRows){
-//         let row =[]
-//         while(j < i+1) {
-//             if(j === 0){
-//                 row.push(1)
-//                 j++
-//             }
-//             else if(j === i){
-//                 row.push(1)
-//                 j=0
-//             } else {
-//                 row.push(mainArr[i-1][j-1] + mainArr[i-1][j])
-//                 j++
-//             }
-
-//         }
-//         mainArr.push(row)
-//         i++
-//     }
-
-//     return mainArr;
-// };
-
-// console.log(generate(5));
+    for (let i = 0; i < numRows; i++) {
+        let row = [];
+        for (let j = 0; j < i + 1; j++) {
+            if (j === 0 || j === i) {
+                row.push(1);
+            } else {
+                row.push(mainArr[i - 1][j - 1] + mainArr[i - 1][j]);
+            }
+        }
+        mainArr.push(row);
+    }
+    return mainArr;
+};
 
 /**
  * ****First Draft
